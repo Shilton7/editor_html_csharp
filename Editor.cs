@@ -3,7 +3,7 @@ using System.Text;
 
 namespace editor_html_csharp
 {
-  public static class Editor
+  public class Editor
   {
 
     public static void Show()
@@ -27,10 +27,11 @@ namespace editor_html_csharp
       {
         file.Append(Console.ReadLine());
         file.Append(Environment.NewLine);
-      } while (Console.ReadKey().Key != ConsoleKey.Escape);
-
-      Console.WriteLine("-------------");
-      Console.WriteLine("Deseja salvar o arquivo ?");
+      }
+      while (Console.ReadKey().Key != ConsoleKey.Escape);
+      Console.WriteLine("----------------------------------------");
+      Console.WriteLine("Deseja salvar este arquivo?");
+      Viewer.Show(file.ToString());
 
     }
 
